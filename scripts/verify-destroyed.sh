@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Reports anything belonging to this project that still exists. Exit 1 if anything is found.
+export MSYS_NO_PATHCONV=1
 source "$(dirname "$0")/common.sh"
 set +e
 assert_account

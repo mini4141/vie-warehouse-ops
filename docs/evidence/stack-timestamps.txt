@@ -1,2 +1,4 @@
 apply_start=2026-11-22T13:36:48Z
 apply_end=2026-11-22T13:53:29Z
+destroy_start=2026-11-22T14:00:45Z
+destroy_end=2026-11-22T14:07:49Z

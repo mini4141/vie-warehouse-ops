@@ -1,0 +1,36 @@
+verify-destroyed 2026-11-22T14:09:52Z account=727965304944 region=ap-southeast-2
+FOUND   tagged project=woc (ap-southeast-2): arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0a706d36c750440e4
+arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api
+arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0d6538d68cd05523d
+arn:aws:ecs:ap-southeast-2:727965304944:cluster/woc
+arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0e96fb14a06d648af
+arn:aws:ecs:ap-southeast-2:727965304944:task-definition/woc-api:1
+arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-08b7e60f0d45c376a
+arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0fbe220686ae8772b
+arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0b64dd2e2b80c40c8
+
+aws: [ERROR]: An error occurred (AccessDeniedException) when calling the GetResources operation: User: arn:aws:iam::727965304944:user/warehouse-deployer is not authorized to perform: tag:GetResources with an explicit deny in a service control policy: arn:aws:organizations::707283704134:policy/o-43cw2p5ayc/service_control_policy/p-tk28l0ho
+ok      tagged project=woc (us-east-1): none
+ok      cloudfront distributions: none
+ok      load balancers: none
+ok      target groups: none
+ok      rds instances: none
+ok      rds snapshots: none
+ok      ecs clusters: none
+ok      nat gateways: none
+ok      elastic ips: none
+ok      vpcs: none
+ok      ecr repositories: none
+ok      s3 buckets: none
+ok      ssm parameters: none
+ok      log groups: none
+ok      iam roles woc-*: none
+ok      budgets: none
+RESULT: resources remain (CloudFront can take 5-15 minutes; re-run)
+
+--- addendum (direct checks, 2026-11-22T14:12Z) ---
+The tagging API still lists ECS and security-group-rule ARNs shortly after destroy (index lag; the tag API is also
+denied in us-east-1 by an organization SCP). Direct checks:
+ecs cluster woc: INACTIVE (AWS keeps a free tombstone), task definition woc-api:1: INACTIVE (cannot be deleted, free)
+security groups tagged project=woc: []   security-group-rules listed above: InvalidSecurityGroupRuleId.NotFound
+All service-specific checks above (ALB, RDS, ECR, S3, VPC, NAT, EIP, SSM, logs, IAM, budget, CloudFront): none.

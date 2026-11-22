@@ -1,0 +1,1244 @@
+[0m[1mrandom_password.db: Refreshing state... [id=none][0m
+[0m[1mdata.aws_ec2_managed_prefix_list.cloudfront: Reading...[0m[0m
+[0m[1mdata.aws_iam_policy_document.ecs_assume: Reading...[0m[0m
+[0m[1maws_ecs_cluster.main: Refreshing state... [id=arn:aws:ecs:ap-southeast-2:727965304944:cluster/woc][0m
+[0m[1maws_cloudwatch_log_group.api: Refreshing state... [id=/ecs/woc-api][0m
+[0m[1mdata.aws_iam_policy_document.ecs_assume: Read complete after 0s [id=1077804475][0m
+[0m[1maws_budgets_budget.monthly: Refreshing state... [id=727965304944:woc-monthly][0m
+[0m[1maws_iam_role.ecs_execution: Refreshing state... [id=woc-ecs-execution][0m
+[0m[1maws_vpc.main: Refreshing state... [id=vpc-0f032e65f2dd8e4de][0m
+[0m[1maws_ecr_repository.api: Refreshing state... [id=woc-api][0m
+[0m[1maws_iam_role_policy_attachment.ecs_execution: Refreshing state... [id=woc-ecs-execution/arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy][0m
+[0m[1mdata.aws_ec2_managed_prefix_list.cloudfront: Read complete after 2s [id=pl-b8a742d1][0m
+[0m[1maws_internet_gateway.igw: Refreshing state... [id=igw-0e2a873889dfdc5b8][0m
+[0m[1maws_route_table.isolated: Refreshing state... [id=rtb-03630f0992c820437][0m
+[0m[1maws_security_group.alb: Refreshing state... [id=sg-0e017c19098538dac][0m
+[0m[1maws_security_group.api: Refreshing state... [id=sg-007fe6cde0cf8ff5b][0m
+[0m[1maws_subnet.isolated[1]: Refreshing state... [id=subnet-08a9031a2c52d5a22][0m
+[0m[1maws_subnet.public[1]: Refreshing state... [id=subnet-040bbdba1561e208d][0m
+[0m[1maws_subnet.isolated[0]: Refreshing state... [id=subnet-0ac5557692a5f7612][0m
+[0m[1maws_security_group.db: Refreshing state... [id=sg-09f1d5c993381bf10][0m
+[0m[1maws_subnet.public[0]: Refreshing state... [id=subnet-0a83afb4923236d73][0m
+[0m[1maws_lb_target_group.api: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:targetgroup/woc-api/d1142d67759751d1][0m
+[0m[1maws_route_table.public: Refreshing state... [id=rtb-04f3339d1c44c7747][0m
+[0m[1maws_route_table_association.isolated[1]: Refreshing state... [id=rtbassoc-02fff16f8dc0ee855][0m
+[0m[1maws_route_table_association.isolated[0]: Refreshing state... [id=rtbassoc-0056fddcf639a005e][0m
+[0m[1maws_db_subnet_group.main: Refreshing state... [id=woc][0m
+[0m[1maws_vpc_security_group_egress_rule.alb_all: Refreshing state... [id=sgr-0e96fb14a06d648af][0m
+[0m[1maws_vpc_security_group_ingress_rule.alb_from_cloudfront: Refreshing state... [id=sgr-0d6538d68cd05523d][0m
+[0m[1maws_vpc_security_group_egress_rule.api_all: Refreshing state... [id=sgr-0fbe220686ae8772b][0m
+[0m[1maws_vpc_security_group_ingress_rule.api_from_alb: Refreshing state... [id=sgr-0a706d36c750440e4][0m
+[0m[1maws_vpc_security_group_ingress_rule.db_from_api: Refreshing state... [id=sgr-08b7e60f0d45c376a][0m
+[0m[1maws_lb.main: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:loadbalancer/app/woc-alb/e9aa17e2a6b07e02][0m
+[0m[1maws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-07a85f9f720d5bbf2][0m
+[0m[1maws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-01de8aa8f670919a4][0m
+[0m[1maws_db_instance.main: Refreshing state... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU][0m
+[0m[1maws_ssm_parameter.database_url: Refreshing state... [id=/woc/database-url][0m
+[0m[1maws_lb_listener.http: Refreshing state... [id=arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:listener/app/woc-alb/e9aa17e2a6b07e02/b2a1802d91224341][0m
+[0m[1maws_iam_role_policy.ecs_ssm: Refreshing state... [id=woc-ecs-execution:woc-read-ssm][0m
+[0m[1maws_ecs_task_definition.api: Refreshing state... [id=woc-api][0m
+[0m[1maws_ecs_service.api: Refreshing state... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_budgets_budget.monthly[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_budgets_budget" "monthly" {
+      [31m-[0m[0m account_id        = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m arn               = "arn:aws:budgets::727965304944:budget/woc-monthly" [90m-> null[0m[0m
+      [31m-[0m[0m budget_type       = "COST" [90m-> null[0m[0m
+      [31m-[0m[0m id                = "727965304944:woc-monthly" [90m-> null[0m[0m
+      [31m-[0m[0m limit_amount      = "10.0" [90m-> null[0m[0m
+      [31m-[0m[0m limit_unit        = "USD" [90m-> null[0m[0m
+      [31m-[0m[0m metrics           = [] [90m-> null[0m[0m
+      [31m-[0m[0m name              = "woc-monthly" [90m-> null[0m[0m
+      [31m-[0m[0m tags              = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all          = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m time_period_end   = "2087-06-15_00:00" [90m-> null[0m[0m
+      [31m-[0m[0m time_period_start = "2026-11-01_00:00" [90m-> null[0m[0m
+      [31m-[0m[0m time_unit         = "MONTHLY" [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m cost_types {
+          [31m-[0m[0m include_credit             = true [90m-> null[0m[0m
+          [31m-[0m[0m include_discount           = true [90m-> null[0m[0m
+          [31m-[0m[0m include_other_subscription = true [90m-> null[0m[0m
+          [31m-[0m[0m include_recurring          = true [90m-> null[0m[0m
+          [31m-[0m[0m include_refund             = true [90m-> null[0m[0m
+          [31m-[0m[0m include_subscription       = true [90m-> null[0m[0m
+          [31m-[0m[0m include_support            = true [90m-> null[0m[0m
+          [31m-[0m[0m include_tax                = true [90m-> null[0m[0m
+          [31m-[0m[0m include_upfront            = true [90m-> null[0m[0m
+          [31m-[0m[0m use_amortized              = false [90m-> null[0m[0m
+          [31m-[0m[0m use_blended                = false [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_cloudwatch_log_group.api[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_cloudwatch_log_group" "api" {
+      [31m-[0m[0m arn                         = "arn:aws:logs:ap-southeast-2:727965304944:log-group:/ecs/woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m deletion_protection_enabled = false [90m-> null[0m[0m
+      [31m-[0m[0m id                          = "/ecs/woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m log_group_class             = "STANDARD" [90m-> null[0m[0m
+      [31m-[0m[0m name                        = "/ecs/woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m region                      = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m retention_in_days           = 1 [90m-> null[0m[0m
+      [31m-[0m[0m skip_destroy                = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                        = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                    = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_db_instance.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_db_instance" "main" {
+      [31m-[0m[0m address                               = "woc-db.cxsmemyuuo2b.ap-southeast-2.rds.amazonaws.com" [90m-> null[0m[0m
+      [31m-[0m[0m allocated_storage                     = 20 [90m-> null[0m[0m
+      [31m-[0m[0m apply_immediately                     = true [90m-> null[0m[0m
+      [31m-[0m[0m arn                                   = "arn:aws:rds:ap-southeast-2:727965304944:db:woc-db" [90m-> null[0m[0m
+      [31m-[0m[0m auto_minor_version_upgrade            = true [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                     = "ap-southeast-2b" [90m-> null[0m[0m
+      [31m-[0m[0m backup_retention_period               = 0 [90m-> null[0m[0m
+      [31m-[0m[0m backup_target                         = "region" [90m-> null[0m[0m
+      [31m-[0m[0m backup_window                         = "14:45-15:15" [90m-> null[0m[0m
+      [31m-[0m[0m ca_cert_identifier                    = "rds-ca-rsa2048-g1" [90m-> null[0m[0m
+      [31m-[0m[0m copy_tags_to_snapshot                 = false [90m-> null[0m[0m
+      [31m-[0m[0m customer_owned_ip_enabled             = false [90m-> null[0m[0m
+      [31m-[0m[0m database_insights_mode                = "standard" [90m-> null[0m[0m
+      [31m-[0m[0m db_name                               = "woc" [90m-> null[0m[0m
+      [31m-[0m[0m db_subnet_group_name                  = "woc" [90m-> null[0m[0m
+      [31m-[0m[0m dedicated_log_volume                  = false [90m-> null[0m[0m
+      [31m-[0m[0m delete_automated_backups              = true [90m-> null[0m[0m
+      [31m-[0m[0m deletion_protection                   = false [90m-> null[0m[0m
+      [31m-[0m[0m domain_dns_ips                        = [] [90m-> null[0m[0m
+      [31m-[0m[0m enabled_cloudwatch_logs_exports       = [] [90m-> null[0m[0m
+      [31m-[0m[0m endpoint                              = "woc-db.cxsmemyuuo2b.ap-southeast-2.rds.amazonaws.com:5432" [90m-> null[0m[0m
+      [31m-[0m[0m engine                                = "postgres" [90m-> null[0m[0m
+      [31m-[0m[0m engine_lifecycle_support              = "open-source-rds-extended-support" [90m-> null[0m[0m
+      [31m-[0m[0m engine_version                        = "16" [90m-> null[0m[0m
+      [31m-[0m[0m engine_version_actual                 = "16.13" [90m-> null[0m[0m
+      [31m-[0m[0m hosted_zone_id                        = "Z32T0VRHXEXS0V" [90m-> null[0m[0m
+      [31m-[0m[0m iam_database_authentication_enabled   = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                    = "db-VTYFKRL443J4NC2TIXOE7PW7GU" [90m-> null[0m[0m
+      [31m-[0m[0m identifier                            = "woc-db" [90m-> null[0m[0m
+      [31m-[0m[0m instance_class                        = "db.t4g.micro" [90m-> null[0m[0m
+      [31m-[0m[0m iops                                  = 3000 [90m-> null[0m[0m
+      [31m-[0m[0m license_model                         = "postgresql-license" [90m-> null[0m[0m
+      [31m-[0m[0m listener_endpoint                     = [] [90m-> null[0m[0m
+      [31m-[0m[0m maintenance_window                    = "mon:15:58-mon:16:28" [90m-> null[0m[0m
+      [31m-[0m[0m master_user_secret                    = [] [90m-> null[0m[0m
+      [31m-[0m[0m max_allocated_storage                 = 0 [90m-> null[0m[0m
+      [31m-[0m[0m monitoring_interval                   = 0 [90m-> null[0m[0m
+      [31m-[0m[0m multi_az                              = false [90m-> null[0m[0m
+      [31m-[0m[0m multi_tenant                          = false [90m-> null[0m[0m
+      [31m-[0m[0m network_type                          = "IPV4" [90m-> null[0m[0m
+      [31m-[0m[0m option_group_name                     = "default:postgres-16" [90m-> null[0m[0m
+      [31m-[0m[0m parameter_group_name                  = "default.postgres16" [90m-> null[0m[0m
+      [31m-[0m[0m password                              = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m password_wo                           = (write-only attribute) [90m-> null[0m[0m
+      [31m-[0m[0m performance_insights_enabled          = false [90m-> null[0m[0m
+      [31m-[0m[0m performance_insights_retention_period = 0 [90m-> null[0m[0m
+      [31m-[0m[0m port                                  = 5432 [90m-> null[0m[0m
+      [31m-[0m[0m publicly_accessible                   = false [90m-> null[0m[0m
+      [31m-[0m[0m region                                = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m replicas                              = [] [90m-> null[0m[0m
+      [31m-[0m[0m resource_id                           = "db-VTYFKRL443J4NC2TIXOE7PW7GU" [90m-> null[0m[0m
+      [31m-[0m[0m skip_final_snapshot                   = true [90m-> null[0m[0m
+      [31m-[0m[0m status                                = "available" [90m-> null[0m[0m
+      [31m-[0m[0m storage_encrypted                     = false [90m-> null[0m[0m
+      [31m-[0m[0m storage_throughput                    = 125 [90m-> null[0m[0m
+      [31m-[0m[0m storage_type                          = "gp3" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                  = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                              = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m upgrade_rollout_order                 = "second" [90m-> null[0m[0m
+      [31m-[0m[0m username                              = "woc" [90m-> null[0m[0m
+      [31m-[0m[0m vpc_security_group_ids                = [
+          [31m-[0m[0m "sg-09f1d5c993381bf10",
+        ] [90m-> null[0m[0m
+        [90m# (16 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_db_subnet_group.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_db_subnet_group" "main" {
+      [31m-[0m[0m arn                     = "arn:aws:rds:ap-southeast-2:727965304944:subgrp:woc" [90m-> null[0m[0m
+      [31m-[0m[0m description             = "Managed by Terraform" [90m-> null[0m[0m
+      [31m-[0m[0m id                      = "woc" [90m-> null[0m[0m
+      [31m-[0m[0m name                    = "woc" [90m-> null[0m[0m
+      [31m-[0m[0m region                  = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_ids              = [
+          [31m-[0m[0m "subnet-08a9031a2c52d5a22",
+          [31m-[0m[0m "subnet-0ac5557692a5f7612",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m supported_network_types = [
+          [31m-[0m[0m "IPV4",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                    = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                  = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_ecr_repository.api[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecr_repository" "api" {
+      [31m-[0m[0m arn                  = "arn:aws:ecr:ap-southeast-2:727965304944:repository/woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m force_delete         = true [90m-> null[0m[0m
+      [31m-[0m[0m id                   = "woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m image_tag_mutability = "MUTABLE" [90m-> null[0m[0m
+      [31m-[0m[0m name                 = "woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m region               = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m registry_id          = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m repository_url       = "727965304944.dkr.ecr.ap-southeast-2.amazonaws.com/woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m tags                 = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all             = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+
+      [31m-[0m[0m encryption_configuration {
+          [31m-[0m[0m encryption_type = "AES256" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [31m-[0m[0m image_scanning_configuration {
+          [31m-[0m[0m scan_on_push = false [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_ecs_cluster.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecs_cluster" "main" {
+      [31m-[0m[0m arn      = "arn:aws:ecs:ap-southeast-2:727965304944:cluster/woc" [90m-> null[0m[0m
+      [31m-[0m[0m id       = "arn:aws:ecs:ap-southeast-2:727965304944:cluster/woc" [90m-> null[0m[0m
+      [31m-[0m[0m name     = "woc" [90m-> null[0m[0m
+      [31m-[0m[0m region   = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m tags     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+
+      [31m-[0m[0m setting {
+          [31m-[0m[0m name  = "containerInsights" [90m-> null[0m[0m
+          [31m-[0m[0m value = "disabled" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_ecs_service.api[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecs_service" "api" {
+      [31m-[0m[0m arn                                = "arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_rebalancing      = "ENABLED" [90m-> null[0m[0m
+      [31m-[0m[0m cluster                            = "arn:aws:ecs:ap-southeast-2:727965304944:cluster/woc" [90m-> null[0m[0m
+      [31m-[0m[0m deployment_maximum_percent         = 200 [90m-> null[0m[0m
+      [31m-[0m[0m deployment_minimum_healthy_percent = 100 [90m-> null[0m[0m
+      [31m-[0m[0m desired_count                      = 1 [90m-> null[0m[0m
+      [31m-[0m[0m enable_ecs_managed_tags            = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_execute_command             = false [90m-> null[0m[0m
+      [31m-[0m[0m health_check_grace_period_seconds  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m iam_role                           = "/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS" [90m-> null[0m[0m
+      [31m-[0m[0m id                                 = "arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m launch_type                        = "FARGATE" [90m-> null[0m[0m
+      [31m-[0m[0m name                               = "woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m platform_version                   = "LATEST" [90m-> null[0m[0m
+      [31m-[0m[0m propagate_tags                     = "NONE" [90m-> null[0m[0m
+      [31m-[0m[0m region                             = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m scheduling_strategy                = "REPLICA" [90m-> null[0m[0m
+      [31m-[0m[0m tags                               = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                           = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m task_definition                    = "arn:aws:ecs:ap-southeast-2:727965304944:task-definition/woc-api:1" [90m-> null[0m[0m
+      [31m-[0m[0m triggers                           = {} [90m-> null[0m[0m
+      [31m-[0m[0m wait_for_steady_state              = true [90m-> null[0m[0m
+
+      [31m-[0m[0m deployment_circuit_breaker {
+          [31m-[0m[0m enable   = false [90m-> null[0m[0m
+          [31m-[0m[0m rollback = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m deployment_configuration {
+          [31m-[0m[0m bake_time_in_minutes = "0" [90m-> null[0m[0m
+          [31m-[0m[0m strategy             = "ROLLING" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m deployment_controller {
+          [31m-[0m[0m type = "ECS" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m load_balancer {
+          [31m-[0m[0m container_name   = "api" [90m-> null[0m[0m
+          [31m-[0m[0m container_port   = 8000 [90m-> null[0m[0m
+          [31m-[0m[0m target_group_arn = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:targetgroup/woc-api/d1142d67759751d1" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [31m-[0m[0m network_configuration {
+          [31m-[0m[0m assign_public_ip = true [90m-> null[0m[0m
+          [31m-[0m[0m security_groups  = [
+              [31m-[0m[0m "sg-007fe6cde0cf8ff5b",
+            ] [90m-> null[0m[0m
+          [31m-[0m[0m subnets          = [
+              [31m-[0m[0m "subnet-040bbdba1561e208d",
+              [31m-[0m[0m "subnet-0a83afb4923236d73",
+            ] [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_ecs_task_definition.api[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ecs_task_definition" "api" {
+      [31m-[0m[0m arn                      = "arn:aws:ecs:ap-southeast-2:727965304944:task-definition/woc-api:1" [90m-> null[0m[0m
+      [31m-[0m[0m arn_without_revision     = "arn:aws:ecs:ap-southeast-2:727965304944:task-definition/woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m container_definitions    = jsonencode(
+            [
+              [31m-[0m[0m {
+                  [31m-[0m[0m environment      = [
+                      [31m-[0m[0m {
+                          [31m-[0m[0m name  = "CORS_ORIGINS"
+                          [31m-[0m[0m value = "*"
+                        },
+                      [31m-[0m[0m {
+                          [31m-[0m[0m name  = "SIM_ROBOTS"
+                          [31m-[0m[0m value = "200"
+                        },
+                      [31m-[0m[0m {
+                          [31m-[0m[0m name  = "SIM_SEED"
+                          [31m-[0m[0m value = "42"
+                        },
+                    ]
+                  [31m-[0m[0m essential        = true
+                  [31m-[0m[0m image            = "727965304944.dkr.ecr.ap-southeast-2.amazonaws.com/woc-api:latest"
+                  [31m-[0m[0m logConfiguration = {
+                      [31m-[0m[0m logDriver = "awslogs"
+                      [31m-[0m[0m options   = {
+                          [31m-[0m[0m awslogs-group         = "/ecs/woc-api"
+                          [31m-[0m[0m awslogs-region        = "ap-southeast-2"
+                          [31m-[0m[0m awslogs-stream-prefix = "api"
+                        }
+                    }
+                  [31m-[0m[0m mountPoints      = []
+                  [31m-[0m[0m name             = "api"
+                  [31m-[0m[0m portMappings     = [
+                      [31m-[0m[0m {
+                          [31m-[0m[0m containerPort = 8000
+                          [31m-[0m[0m hostPort      = 8000
+                          [31m-[0m[0m protocol      = "tcp"
+                        },
+                    ]
+                  [31m-[0m[0m secrets          = [
+                      [31m-[0m[0m {
+                          [31m-[0m[0m name      = "DATABASE_URL"
+                          [31m-[0m[0m valueFrom = "arn:aws:ssm:ap-southeast-2:727965304944:parameter/woc/database-url"
+                        },
+                    ]
+                  [31m-[0m[0m systemControls   = []
+                  [31m-[0m[0m volumesFrom      = []
+                },
+            ]
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m cpu                      = "512" [90m-> null[0m[0m
+      [31m-[0m[0m enable_fault_injection   = false [90m-> null[0m[0m
+      [31m-[0m[0m execution_role_arn       = "arn:aws:iam::727965304944:role/woc-ecs-execution" [90m-> null[0m[0m
+      [31m-[0m[0m family                   = "woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m id                       = "woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m memory                   = "1024" [90m-> null[0m[0m
+      [31m-[0m[0m network_mode             = "awsvpc" [90m-> null[0m[0m
+      [31m-[0m[0m region                   = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m requires_compatibilities = [
+          [31m-[0m[0m "FARGATE",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m revision                 = 1 [90m-> null[0m[0m
+      [31m-[0m[0m skip_destroy             = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                 = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m track_latest             = false [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_iam_role.ecs_execution[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_iam_role" "ecs_execution" {
+      [31m-[0m[0m arn                   = "arn:aws:iam::727965304944:role/woc-ecs-execution" [90m-> null[0m[0m
+      [31m-[0m[0m assume_role_policy    = jsonencode(
+            {
+              [31m-[0m[0m Statement = [
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action    = "sts:AssumeRole"
+                      [31m-[0m[0m Effect    = "Allow"
+                      [31m-[0m[0m Principal = {
+                          [31m-[0m[0m Service = "ecs-tasks.amazonaws.com"
+                        }
+                    },
+                ]
+              [31m-[0m[0m Version   = "2012-10-17"
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m create_date           = "2026-11-22T13:43:41Z" [90m-> null[0m[0m
+      [31m-[0m[0m force_detach_policies = false [90m-> null[0m[0m
+      [31m-[0m[0m id                    = "woc-ecs-execution" [90m-> null[0m[0m
+      [31m-[0m[0m managed_policy_arns   = [
+          [31m-[0m[0m "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m max_session_duration  = 3600 [90m-> null[0m[0m
+      [31m-[0m[0m name                  = "woc-ecs-execution" [90m-> null[0m[0m
+      [31m-[0m[0m path                  = "/" [90m-> null[0m[0m
+      [31m-[0m[0m tags                  = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all              = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m unique_id             = "AROA2S7Q5BBYLVNF3L7VY" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m inline_policy {
+          [31m-[0m[0m name   = "woc-read-ssm" [90m-> null[0m[0m
+          [31m-[0m[0m policy = jsonencode(
+                {
+                  [31m-[0m[0m Statement = [
+                      [31m-[0m[0m {
+                          [31m-[0m[0m Action   = [
+                              [31m-[0m[0m "ssm:GetParameters",
+                            ]
+                          [31m-[0m[0m Effect   = "Allow"
+                          [31m-[0m[0m Resource = [
+                              [31m-[0m[0m "arn:aws:ssm:ap-southeast-2:727965304944:parameter/woc/database-url",
+                            ]
+                        },
+                    ]
+                  [31m-[0m[0m Version   = "2012-10-17"
+                }
+            ) [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_iam_role_policy.ecs_ssm[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy" "ecs_ssm" {
+      [31m-[0m[0m id          = "woc-ecs-execution:woc-read-ssm" [90m-> null[0m[0m
+      [31m-[0m[0m name        = "woc-read-ssm" [90m-> null[0m[0m
+      [31m-[0m[0m policy      = jsonencode(
+            {
+              [31m-[0m[0m Statement = [
+                  [31m-[0m[0m {
+                      [31m-[0m[0m Action   = [
+                          [31m-[0m[0m "ssm:GetParameters",
+                        ]
+                      [31m-[0m[0m Effect   = "Allow"
+                      [31m-[0m[0m Resource = [
+                          [31m-[0m[0m "arn:aws:ssm:ap-southeast-2:727965304944:parameter/woc/database-url",
+                        ]
+                    },
+                ]
+              [31m-[0m[0m Version   = "2012-10-17"
+            }
+        ) [90m-> null[0m[0m
+      [31m-[0m[0m role        = "woc-ecs-execution" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_iam_role_policy_attachment.ecs_execution[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_iam_role_policy_attachment" "ecs_execution" {
+      [31m-[0m[0m id         = "woc-ecs-execution/arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy" [90m-> null[0m[0m
+      [31m-[0m[0m policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy" [90m-> null[0m[0m
+      [31m-[0m[0m role       = "woc-ecs-execution" [90m-> null[0m[0m
+    }
+
+[1m  # aws_internet_gateway.igw[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_internet_gateway" "igw" {
+      [31m-[0m[0m arn      = "arn:aws:ec2:ap-southeast-2:727965304944:internet-gateway/igw-0e2a873889dfdc5b8" [90m-> null[0m[0m
+      [31m-[0m[0m id       = "igw-0e2a873889dfdc5b8" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m region   = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m tags     = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id   = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+    }
+
+[1m  # aws_lb.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_lb" "main" {
+      [31m-[0m[0m arn                                                          = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:loadbalancer/app/woc-alb/e9aa17e2a6b07e02" [90m-> null[0m[0m
+      [31m-[0m[0m arn_suffix                                                   = "app/woc-alb/e9aa17e2a6b07e02" [90m-> null[0m[0m
+      [31m-[0m[0m client_keep_alive                                            = 3600 [90m-> null[0m[0m
+      [31m-[0m[0m desync_mitigation_mode                                       = "defensive" [90m-> null[0m[0m
+      [31m-[0m[0m dns_name                                                     = "woc-alb-768083828.ap-southeast-2.elb.amazonaws.com" [90m-> null[0m[0m
+      [31m-[0m[0m drop_invalid_header_fields                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_cross_zone_load_balancing                             = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_deletion_protection                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_http2                                                 = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_prefix_for_ipv6_source_nat                            = "off" [90m-> null[0m[0m
+      [31m-[0m[0m enable_tls_version_and_cipher_suite_headers                  = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_waf_fail_open                                         = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_xff_client_port                                       = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_zonal_shift                                           = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                                           = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:loadbalancer/app/woc-alb/e9aa17e2a6b07e02" [90m-> null[0m[0m
+      [31m-[0m[0m idle_timeout                                                 = 300 [90m-> null[0m[0m
+      [31m-[0m[0m internal                                                     = false [90m-> null[0m[0m
+      [31m-[0m[0m ip_address_type                                              = "ipv4" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancer_type                                           = "application" [90m-> null[0m[0m
+      [31m-[0m[0m name                                                         = "woc-alb" [90m-> null[0m[0m
+      [31m-[0m[0m preserve_host_header                                         = false [90m-> null[0m[0m
+      [31m-[0m[0m region                                                       = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m security_groups                                              = [
+          [31m-[0m[0m "sg-0e017c19098538dac",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m subnets                                                      = [
+          [31m-[0m[0m "subnet-040bbdba1561e208d",
+          [31m-[0m[0m "subnet-0a83afb4923236d73",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags                                                         = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                                     = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                                       = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+      [31m-[0m[0m xff_header_processing_mode                                   = "append" [90m-> null[0m[0m
+      [31m-[0m[0m zone_id                                                      = "Z1GM3OXH4ZPM65" [90m-> null[0m[0m
+        [90m# (3 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m access_logs {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+
+      [31m-[0m[0m connection_logs {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+
+      [31m-[0m[0m health_check_logs {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+
+      [31m-[0m[0m subnet_mapping {
+          [31m-[0m[0m subnet_id            = "subnet-040bbdba1561e208d" [90m-> null[0m[0m
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+      [31m-[0m[0m subnet_mapping {
+          [31m-[0m[0m subnet_id            = "subnet-0a83afb4923236d73" [90m-> null[0m[0m
+            [90m# (4 unchanged attributes hidden)[0m[0m
+        }
+    }
+
+[1m  # aws_lb_listener.http[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_lb_listener" "http" {
+      [31m-[0m[0m arn                                                                 = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:listener/app/woc-alb/e9aa17e2a6b07e02/b2a1802d91224341" [90m-> null[0m[0m
+      [31m-[0m[0m id                                                                  = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:listener/app/woc-alb/e9aa17e2a6b07e02/b2a1802d91224341" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancer_arn                                                   = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:loadbalancer/app/woc-alb/e9aa17e2a6b07e02" [90m-> null[0m[0m
+      [31m-[0m[0m port                                                                = 80 [90m-> null[0m[0m
+      [31m-[0m[0m protocol                                                            = "HTTP" [90m-> null[0m[0m
+      [31m-[0m[0m region                                                              = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m routing_http_response_server_enabled                                = true [90m-> null[0m[0m
+      [31m-[0m[0m tags                                                                = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                                            = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+        [90m# (11 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m default_action {
+          [31m-[0m[0m order            = 1 [90m-> null[0m[0m
+          [31m-[0m[0m target_group_arn = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:targetgroup/woc-api/d1142d67759751d1" [90m-> null[0m[0m
+          [31m-[0m[0m type             = "forward" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # aws_lb_target_group.api[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_lb_target_group" "api" {
+      [31m-[0m[0m arn                                = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:targetgroup/woc-api/d1142d67759751d1" [90m-> null[0m[0m
+      [31m-[0m[0m arn_suffix                         = "targetgroup/woc-api/d1142d67759751d1" [90m-> null[0m[0m
+      [31m-[0m[0m deregistration_delay               = "5" [90m-> null[0m[0m
+      [31m-[0m[0m id                                 = "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:targetgroup/woc-api/d1142d67759751d1" [90m-> null[0m[0m
+      [31m-[0m[0m ip_address_type                    = "ipv4" [90m-> null[0m[0m
+      [31m-[0m[0m lambda_multi_value_headers_enabled = false [90m-> null[0m[0m
+      [31m-[0m[0m load_balancer_arns                 = [
+          [31m-[0m[0m "arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:loadbalancer/app/woc-alb/e9aa17e2a6b07e02",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_algorithm_type      = "round_robin" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_anomaly_mitigation  = "off" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_cross_zone_enabled  = "use_load_balancer_configuration" [90m-> null[0m[0m
+      [31m-[0m[0m name                               = "woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m port                               = 8000 [90m-> null[0m[0m
+      [31m-[0m[0m protocol                           = "HTTP" [90m-> null[0m[0m
+      [31m-[0m[0m protocol_version                   = "HTTP1" [90m-> null[0m[0m
+      [31m-[0m[0m proxy_protocol_v2                  = false [90m-> null[0m[0m
+      [31m-[0m[0m region                             = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m slow_start                         = 0 [90m-> null[0m[0m
+      [31m-[0m[0m tags                               = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                           = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m target_control_port                = 0 [90m-> null[0m[0m
+      [31m-[0m[0m target_type                        = "ip" [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                             = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+
+      [31m-[0m[0m health_check {
+          [31m-[0m[0m enabled             = true [90m-> null[0m[0m
+          [31m-[0m[0m healthy_threshold   = 2 [90m-> null[0m[0m
+          [31m-[0m[0m interval            = 15 [90m-> null[0m[0m
+          [31m-[0m[0m matcher             = "200" [90m-> null[0m[0m
+          [31m-[0m[0m path                = "/healthz" [90m-> null[0m[0m
+          [31m-[0m[0m port                = "traffic-port" [90m-> null[0m[0m
+          [31m-[0m[0m protocol            = "HTTP" [90m-> null[0m[0m
+          [31m-[0m[0m timeout             = 5 [90m-> null[0m[0m
+          [31m-[0m[0m unhealthy_threshold = 5 [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m stickiness {
+          [31m-[0m[0m cookie_duration = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m enabled         = false [90m-> null[0m[0m
+          [31m-[0m[0m type            = "lb_cookie" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+
+      [31m-[0m[0m target_failover {}
+
+      [31m-[0m[0m target_group_health {
+          [31m-[0m[0m dns_failover {
+              [31m-[0m[0m minimum_healthy_targets_count      = "1" [90m-> null[0m[0m
+              [31m-[0m[0m minimum_healthy_targets_percentage = "off" [90m-> null[0m[0m
+            }
+          [31m-[0m[0m unhealthy_state_routing {
+              [31m-[0m[0m minimum_healthy_targets_count      = 1 [90m-> null[0m[0m
+              [31m-[0m[0m minimum_healthy_targets_percentage = "off" [90m-> null[0m[0m
+            }
+        }
+
+      [31m-[0m[0m target_health_state {}
+    }
+
+[1m  # aws_route_table.isolated[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table" "isolated" {
+      [31m-[0m[0m arn              = "arn:aws:ec2:ap-southeast-2:727965304944:route-table/rtb-03630f0992c820437" [90m-> null[0m[0m
+      [31m-[0m[0m id               = "rtb-03630f0992c820437" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id         = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m propagating_vgws = [] [90m-> null[0m[0m
+      [31m-[0m[0m region           = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m route            = [] [90m-> null[0m[0m
+      [31m-[0m[0m tags             = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all         = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id           = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+    }
+
+[1m  # aws_route_table.public[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table" "public" {
+      [31m-[0m[0m arn              = "arn:aws:ec2:ap-southeast-2:727965304944:route-table/rtb-04f3339d1c44c7747" [90m-> null[0m[0m
+      [31m-[0m[0m id               = "rtb-04f3339d1c44c7747" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id         = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m propagating_vgws = [] [90m-> null[0m[0m
+      [31m-[0m[0m region           = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m route            = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_block                 = "0.0.0.0/0"
+              [31m-[0m[0m gateway_id                 = "igw-0e2a873889dfdc5b8"
+                [90m# (12 unchanged attributes hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags             = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all         = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id           = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+    }
+
+[1m  # aws_route_table_association.isolated[0][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "isolated" {
+      [31m-[0m[0m id             = "rtbassoc-0056fddcf639a005e" [90m-> null[0m[0m
+      [31m-[0m[0m region         = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m route_table_id = "rtb-03630f0992c820437" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id      = "subnet-0ac5557692a5f7612" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_route_table_association.isolated[1][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "isolated" {
+      [31m-[0m[0m id             = "rtbassoc-02fff16f8dc0ee855" [90m-> null[0m[0m
+      [31m-[0m[0m region         = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m route_table_id = "rtb-03630f0992c820437" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id      = "subnet-08a9031a2c52d5a22" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_route_table_association.public[0][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "public" {
+      [31m-[0m[0m id             = "rtbassoc-07a85f9f720d5bbf2" [90m-> null[0m[0m
+      [31m-[0m[0m region         = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m route_table_id = "rtb-04f3339d1c44c7747" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id      = "subnet-0a83afb4923236d73" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_route_table_association.public[1][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "public" {
+      [31m-[0m[0m id             = "rtbassoc-01de8aa8f670919a4" [90m-> null[0m[0m
+      [31m-[0m[0m region         = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m route_table_id = "rtb-04f3339d1c44c7747" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id      = "subnet-040bbdba1561e208d" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_security_group.alb[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "alb" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:ap-southeast-2:727965304944:security-group/sg-0e017c19098538dac" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "ALB: HTTP from CloudFront only" [90m-> null[0m[0m
+      [31m-[0m[0m egress                 = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m from_port        = 0
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "-1"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sg-0e017c19098538dac" [90m-> null[0m[0m
+      [31m-[0m[0m ingress                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m from_port        = 80
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 80
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "woc-alb" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id               = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m revoke_rules_on_delete = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                 = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_security_group.api[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "api" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:ap-southeast-2:727965304944:security-group/sg-007fe6cde0cf8ff5b" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "API tasks: 8000 from ALB" [90m-> null[0m[0m
+      [31m-[0m[0m egress                 = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m from_port        = 0
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "-1"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sg-007fe6cde0cf8ff5b" [90m-> null[0m[0m
+      [31m-[0m[0m ingress                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = []
+              [31m-[0m[0m from_port        = 8000
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = [
+                  [31m-[0m[0m "sg-0e017c19098538dac",
+                ]
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 8000
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "woc-api" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id               = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m revoke_rules_on_delete = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                 = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_security_group.db[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "db" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:ap-southeast-2:727965304944:security-group/sg-09f1d5c993381bf10" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "RDS: 5432 from API" [90m-> null[0m[0m
+      [31m-[0m[0m egress                 = [] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sg-09f1d5c993381bf10" [90m-> null[0m[0m
+      [31m-[0m[0m ingress                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = []
+              [31m-[0m[0m from_port        = 5432
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = [
+                  [31m-[0m[0m "sg-007fe6cde0cf8ff5b",
+                ]
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 5432
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "woc-db" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id               = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m revoke_rules_on_delete = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                 = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_ssm_parameter.database_url[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_ssm_parameter" "database_url" {
+      [31m-[0m[0m arn             = "arn:aws:ssm:ap-southeast-2:727965304944:parameter/woc/database-url" [90m-> null[0m[0m
+      [31m-[0m[0m data_type       = "text" [90m-> null[0m[0m
+      [31m-[0m[0m has_value_wo    = false [90m-> null[0m[0m
+      [31m-[0m[0m id              = "/woc/database-url" [90m-> null[0m[0m
+      [31m-[0m[0m key_id          = "alias/aws/ssm" [90m-> null[0m[0m
+      [31m-[0m[0m name            = "/woc/database-url" [90m-> null[0m[0m
+      [31m-[0m[0m region          = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m tags            = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all        = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tier            = "Standard" [90m-> null[0m[0m
+      [31m-[0m[0m type            = "SecureString" [90m-> null[0m[0m
+      [31m-[0m[0m value           = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m value_wo        = (write-only attribute) [90m-> null[0m[0m
+      [31m-[0m[0m version         = 1 [90m-> null[0m[0m
+        [90m# (2 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_subnet.isolated[0][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "isolated" {
+      [31m-[0m[0m arn                                            = "arn:aws:ec2:ap-southeast-2:727965304944:subnet/subnet-0ac5557692a5f7612" [90m-> null[0m[0m
+      [31m-[0m[0m assign_ipv6_address_on_creation                = false [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                              = "ap-southeast-2a" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_id                           = "apse2-az1" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                                     = "10.0.10.0/24" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns64                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_lni_at_device_index                     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_a_record_on_launch    = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                             = "subnet-0ac5557692a5f7612" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_native                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m map_customer_owned_ip_on_launch                = false [90m-> null[0m[0m
+      [31m-[0m[0m map_public_ip_on_launch                        = false [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                                       = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns_hostname_type_on_launch            = "ip-name" [90m-> null[0m[0m
+      [31m-[0m[0m region                                         = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                           = {
+          [31m-[0m[0m "Name" = "woc-isolated-0"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                       = {
+          [31m-[0m[0m "Name"    = "woc-isolated-0"
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                         = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_subnet.isolated[1][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "isolated" {
+      [31m-[0m[0m arn                                            = "arn:aws:ec2:ap-southeast-2:727965304944:subnet/subnet-08a9031a2c52d5a22" [90m-> null[0m[0m
+      [31m-[0m[0m assign_ipv6_address_on_creation                = false [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                              = "ap-southeast-2b" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_id                           = "apse2-az3" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                                     = "10.0.11.0/24" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns64                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_lni_at_device_index                     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_a_record_on_launch    = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                             = "subnet-08a9031a2c52d5a22" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_native                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m map_customer_owned_ip_on_launch                = false [90m-> null[0m[0m
+      [31m-[0m[0m map_public_ip_on_launch                        = false [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                                       = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns_hostname_type_on_launch            = "ip-name" [90m-> null[0m[0m
+      [31m-[0m[0m region                                         = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                           = {
+          [31m-[0m[0m "Name" = "woc-isolated-1"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                       = {
+          [31m-[0m[0m "Name"    = "woc-isolated-1"
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                         = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_subnet.public[0][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "public" {
+      [31m-[0m[0m arn                                            = "arn:aws:ec2:ap-southeast-2:727965304944:subnet/subnet-0a83afb4923236d73" [90m-> null[0m[0m
+      [31m-[0m[0m assign_ipv6_address_on_creation                = false [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                              = "ap-southeast-2a" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_id                           = "apse2-az1" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                                     = "10.0.0.0/24" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns64                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_lni_at_device_index                     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_a_record_on_launch    = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                             = "subnet-0a83afb4923236d73" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_native                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m map_customer_owned_ip_on_launch                = false [90m-> null[0m[0m
+      [31m-[0m[0m map_public_ip_on_launch                        = true [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                                       = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns_hostname_type_on_launch            = "ip-name" [90m-> null[0m[0m
+      [31m-[0m[0m region                                         = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                           = {
+          [31m-[0m[0m "Name" = "woc-public-0"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                       = {
+          [31m-[0m[0m "Name"    = "woc-public-0"
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                         = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_subnet.public[1][0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "public" {
+      [31m-[0m[0m arn                                            = "arn:aws:ec2:ap-southeast-2:727965304944:subnet/subnet-040bbdba1561e208d" [90m-> null[0m[0m
+      [31m-[0m[0m assign_ipv6_address_on_creation                = false [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                              = "ap-southeast-2b" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_id                           = "apse2-az3" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                                     = "10.0.1.0/24" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns64                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_lni_at_device_index                     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_a_record_on_launch    = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                             = "subnet-040bbdba1561e208d" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_native                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m map_customer_owned_ip_on_launch                = false [90m-> null[0m[0m
+      [31m-[0m[0m map_public_ip_on_launch                        = true [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                                       = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns_hostname_type_on_launch            = "ip-name" [90m-> null[0m[0m
+      [31m-[0m[0m region                                         = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                           = {
+          [31m-[0m[0m "Name" = "woc-public-1"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                       = {
+          [31m-[0m[0m "Name"    = "woc-public-1"
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                         = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_vpc.main[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc" "main" {
+      [31m-[0m[0m arn                                  = "arn:aws:ec2:ap-southeast-2:727965304944:vpc/vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+      [31m-[0m[0m assign_generated_ipv6_cidr_block     = false [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                           = "10.0.0.0/16" [90m-> null[0m[0m
+      [31m-[0m[0m default_network_acl_id               = "acl-0e116c01f37590ebc" [90m-> null[0m[0m
+      [31m-[0m[0m default_route_table_id               = "rtb-0a3f7d88ca9742cc6" [90m-> null[0m[0m
+      [31m-[0m[0m default_security_group_id            = "sg-0d5e3005470a1e214" [90m-> null[0m[0m
+      [31m-[0m[0m dhcp_options_id                      = "dopt-0e93ce7fe7610b2c6" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns_hostnames                 = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns_support                   = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_network_address_usage_metrics = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                   = "vpc-0f032e65f2dd8e4de" [90m-> null[0m[0m
+      [31m-[0m[0m instance_tenancy                     = "default" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_netmask_length                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m main_route_table_id                  = "rtb-0a3f7d88ca9742cc6" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                             = "727965304944" [90m-> null[0m[0m
+      [31m-[0m[0m region                               = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                 = {
+          [31m-[0m[0m "Name" = "woc"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                             = {
+          [31m-[0m[0m "Name"    = "woc"
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_egress_rule.alb_all[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_egress_rule" "alb_all" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0e96fb14a06d648af" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "0.0.0.0/0" [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-0e96fb14a06d648af" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "-1" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-0e017c19098538dac" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-0e96fb14a06d648af" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_egress_rule.api_all[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_egress_rule" "api_all" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0fbe220686ae8772b" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "0.0.0.0/0" [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-0fbe220686ae8772b" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "-1" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-007fe6cde0cf8ff5b" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-0fbe220686ae8772b" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_ingress_rule.alb_from_cloudfront[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_ingress_rule" "alb_from_cloudfront" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0d6538d68cd05523d" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "0.0.0.0/0" [90m-> null[0m[0m
+      [31m-[0m[0m from_port              = 80 [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-0d6538d68cd05523d" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "tcp" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-0e017c19098538dac" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-0d6538d68cd05523d" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m to_port                = 80 [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_ingress_rule.api_from_alb[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_ingress_rule" "api_from_alb" {
+      [31m-[0m[0m arn                          = "arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-0a706d36c750440e4" [90m-> null[0m[0m
+      [31m-[0m[0m from_port                    = 8000 [90m-> null[0m[0m
+      [31m-[0m[0m id                           = "sgr-0a706d36c750440e4" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol                  = "tcp" [90m-> null[0m[0m
+      [31m-[0m[0m referenced_security_group_id = "sg-0e017c19098538dac" [90m-> null[0m[0m
+      [31m-[0m[0m region                       = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id            = "sg-007fe6cde0cf8ff5b" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id       = "sgr-0a706d36c750440e4" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                     = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m to_port                      = 8000 [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_ingress_rule.db_from_api[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_ingress_rule" "db_from_api" {
+      [31m-[0m[0m arn                          = "arn:aws:ec2:ap-southeast-2:727965304944:security-group-rule/sgr-08b7e60f0d45c376a" [90m-> null[0m[0m
+      [31m-[0m[0m from_port                    = 5432 [90m-> null[0m[0m
+      [31m-[0m[0m id                           = "sgr-08b7e60f0d45c376a" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol                  = "tcp" [90m-> null[0m[0m
+      [31m-[0m[0m referenced_security_group_id = "sg-007fe6cde0cf8ff5b" [90m-> null[0m[0m
+      [31m-[0m[0m region                       = "ap-southeast-2" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id            = "sg-09f1d5c993381bf10" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id       = "sgr-08b7e60f0d45c376a" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                     = {
+          [31m-[0m[0m "project" = "woc"
+          [31m-[0m[0m "ttl"     = "destroy-today"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m to_port                      = 5432 [90m-> null[0m[0m
+    }
+
+[1m  # random_password.db[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "random_password" "db" {
+      [31m-[0m[0m bcrypt_hash = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m id          = "none" [90m-> null[0m[0m
+      [31m-[0m[0m length      = 24 [90m-> null[0m[0m
+      [31m-[0m[0m lower       = true [90m-> null[0m[0m
+      [31m-[0m[0m min_lower   = 0 [90m-> null[0m[0m
+      [31m-[0m[0m min_numeric = 0 [90m-> null[0m[0m
+      [31m-[0m[0m min_special = 0 [90m-> null[0m[0m
+      [31m-[0m[0m min_upper   = 0 [90m-> null[0m[0m
+      [31m-[0m[0m number      = true [90m-> null[0m[0m
+      [31m-[0m[0m numeric     = true [90m-> null[0m[0m
+      [31m-[0m[0m result      = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m special     = false [90m-> null[0m[0m
+      [31m-[0m[0m upper       = true [90m-> null[0m[0m
+    }
+
+[1mPlan:[0m [0m0 to add, 0 to change, 36 to destroy.
+
+Changes to Outputs:
+  [31m-[0m[0m app_url                    = "http://woc-alb-768083828.ap-southeast-2.elb.amazonaws.com" [90m-> null[0m[0m
+  [31m-[0m[0m cloudfront_distribution_id = "" [90m-> null[0m[0m
+  [31m-[0m[0m ecr_repo_url               = "727965304944.dkr.ecr.ap-southeast-2.amazonaws.com/woc-api" [90m-> null[0m[0m
+  [31m-[0m[0m ecs_cluster                = "woc" [90m-> null[0m[0m
+  [31m-[0m[0m ecs_service                = "woc-api" [90m-> null[0m[0m
+  [31m-[0m[0m rds_endpoint               = "woc-db.cxsmemyuuo2b.ap-southeast-2.rds.amazonaws.com" [90m-> null[0m[0m
+[0m[1maws_route_table_association.public[0]: Destroying... [id=rtbassoc-07a85f9f720d5bbf2][0m[0m
+[0m[1maws_route_table_association.isolated[0]: Destroying... [id=rtbassoc-0056fddcf639a005e][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.db_from_api: Destroying... [id=sgr-08b7e60f0d45c376a][0m[0m
+[0m[1maws_vpc_security_group_egress_rule.alb_all: Destroying... [id=sgr-0e96fb14a06d648af][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.alb_from_cloudfront: Destroying... [id=sgr-0d6538d68cd05523d][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.api_from_alb: Destroying... [id=sgr-0a706d36c750440e4][0m[0m
+[0m[1maws_route_table_association.public[1]: Destroying... [id=rtbassoc-01de8aa8f670919a4][0m[0m
+[0m[1maws_route_table_association.isolated[1]: Destroying... [id=rtbassoc-02fff16f8dc0ee855][0m[0m
+[0m[1maws_vpc_security_group_egress_rule.api_all: Destroying... [id=sgr-0fbe220686ae8772b][0m[0m
+[0m[1maws_ecs_service.api: Destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.api_from_alb: Destruction complete after 2s[0m
+[0m[1maws_vpc_security_group_egress_rule.alb_all: Destruction complete after 2s[0m
+[0m[1maws_vpc_security_group_ingress_rule.alb_from_cloudfront: Destruction complete after 2s[0m
+[0m[1maws_vpc_security_group_ingress_rule.db_from_api: Destruction complete after 2s[0m
+[0m[1maws_route_table_association.isolated[1]: Destruction complete after 2s[0m
+[0m[1maws_route_table_association.isolated[0]: Destruction complete after 2s[0m
+[0m[1maws_route_table.isolated: Destroying... [id=rtb-03630f0992c820437][0m[0m
+[0m[1maws_route_table_association.public[0]: Destruction complete after 2s[0m
+[0m[1maws_route_table_association.public[1]: Destruction complete after 2s[0m
+[0m[1maws_route_table.public: Destroying... [id=rtb-04f3339d1c44c7747][0m[0m
+[0m[1maws_vpc_security_group_egress_rule.api_all: Destruction complete after 3s[0m
+[0m[1maws_route_table.public: Destruction complete after 2s[0m
+[0m[1maws_internet_gateway.igw: Destroying... [id=igw-0e2a873889dfdc5b8][0m[0m
+[0m[1maws_route_table.isolated: Destruction complete after 2s[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 00m10s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 00m10s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 00m20s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 00m20s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 00m30s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 00m30s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 00m40s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 00m40s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 00m50s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 00m50s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 01m00s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 01m00s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 01m10s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 01m10s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 01m20s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 01m20s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 01m30s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 01m30s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 01m40s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 01m40s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 01m50s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 01m50s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 02m00s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 02m00s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 02m10s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 02m10s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 02m20s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 02m20s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 02m30s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 02m30s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 02m40s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 02m40s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 02m50s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 02m50s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 03m00s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 03m00s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 03m10s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 03m10s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Still destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:service/woc/woc-api, 03m20s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 03m20s elapsed][0m[0m
+[0m[1maws_ecs_service.api: Destruction complete after 3m25s[0m
+[0m[1maws_ecs_task_definition.api: Destroying... [id=woc-api][0m[0m
+[0m[1maws_lb_listener.http: Destroying... [id=arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:listener/app/woc-alb/e9aa17e2a6b07e02/b2a1802d91224341][0m[0m
+[0m[1maws_ecs_cluster.main: Destroying... [id=arn:aws:ecs:ap-southeast-2:727965304944:cluster/woc][0m[0m
+[0m[1maws_iam_role_policy_attachment.ecs_execution: Destroying... [id=woc-ecs-execution/arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy][0m[0m
+[0m[1maws_security_group.api: Destroying... [id=sg-007fe6cde0cf8ff5b][0m[0m
+[0m[1maws_iam_role_policy.ecs_ssm: Destroying... [id=woc-ecs-execution:woc-read-ssm][0m[0m
+[0m[1maws_ecs_task_definition.api: Destruction complete after 0s[0m
+[0m[1maws_cloudwatch_log_group.api: Destroying... [id=/ecs/woc-api][0m[0m
+[0m[1maws_ecr_repository.api: Destroying... [id=woc-api][0m[0m
+[0m[1maws_iam_role_policy.ecs_ssm: Destruction complete after 1s[0m
+[0m[1maws_iam_role_policy_attachment.ecs_execution: Destruction complete after 1s[0m
+[0m[1maws_ssm_parameter.database_url: Destroying... [id=/woc/database-url][0m[0m
+[0m[1maws_iam_role.ecs_execution: Destroying... [id=woc-ecs-execution][0m[0m
+[0m[1maws_ecs_cluster.main: Destruction complete after 1s[0m
+[0m[1maws_lb_listener.http: Destruction complete after 1s[0m
+[0m[1maws_lb_target_group.api: Destroying... [id=arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:targetgroup/woc-api/d1142d67759751d1][0m[0m
+[0m[1maws_lb.main: Destroying... [id=arn:aws:elasticloadbalancing:ap-southeast-2:727965304944:loadbalancer/app/woc-alb/e9aa17e2a6b07e02][0m[0m
+[0m[1maws_cloudwatch_log_group.api: Destruction complete after 2s[0m
+[0m[1maws_iam_role.ecs_execution: Destruction complete after 1s[0m
+[0m[1maws_ecr_repository.api: Destruction complete after 2s[0m
+[0m[1maws_lb_target_group.api: Destruction complete after 1s[0m
+[0m[1maws_ssm_parameter.database_url: Destruction complete after 1s[0m
+[0m[1maws_db_instance.main: Destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU][0m[0m
+[0m[1maws_security_group.api: Destruction complete after 3s[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 03m30s elapsed][0m[0m
+[0m[1maws_lb.main: Still destroying... [id=arn:aws:elasticloadbalancing:ap-southea...dbalancer/app/woc-alb/e9aa17e2a6b07e02, 00m10s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 00m10s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Still destroying... [id=igw-0e2a873889dfdc5b8, 03m40s elapsed][0m[0m
+[0m[1maws_internet_gateway.igw: Destruction complete after 3m42s[0m
+[0m[1maws_lb.main: Still destroying... [id=arn:aws:elasticloadbalancing:ap-southea...dbalancer/app/woc-alb/e9aa17e2a6b07e02, 00m20s elapsed][0m[0m
+[0m[1maws_lb.main: Destruction complete after 21s[0m
+[0m[1maws_subnet.public[1]: Destroying... [id=subnet-040bbdba1561e208d][0m[0m
+[0m[1maws_subnet.public[0]: Destroying... [id=subnet-0a83afb4923236d73][0m[0m
+[0m[1maws_security_group.alb: Destroying... [id=sg-0e017c19098538dac][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 00m20s elapsed][0m[0m
+[0m[1maws_subnet.public[1]: Destruction complete after 1s[0m
+[0m[1maws_subnet.public[0]: Destruction complete after 1s[0m
+[0m[1maws_security_group.alb: Destruction complete after 1s[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 00m30s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 00m40s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 00m50s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 01m00s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 01m10s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 01m20s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 01m30s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 01m40s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 01m50s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 02m00s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 02m10s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 02m20s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 02m30s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 02m40s elapsed][0m[0m
+[0m[1maws_db_instance.main: Still destroying... [id=db-VTYFKRL443J4NC2TIXOE7PW7GU, 02m50s elapsed][0m[0m
+[0m[1maws_db_instance.main: Destruction complete after 2m58s[0m
+[0m[1maws_db_subnet_group.main: Destroying... [id=woc][0m[0m
+[0m[1maws_security_group.db: Destroying... [id=sg-09f1d5c993381bf10][0m[0m
+[0m[1mrandom_password.db: Destroying... [id=none][0m[0m
+[0m[1mrandom_password.db: Destruction complete after 0s[0m
+[0m[1maws_db_subnet_group.main: Destruction complete after 1s[0m
+[0m[1maws_subnet.isolated[1]: Destroying... [id=subnet-08a9031a2c52d5a22][0m[0m
+[0m[1maws_subnet.isolated[0]: Destroying... [id=subnet-0ac5557692a5f7612][0m[0m
+[0m[1maws_subnet.isolated[1]: Destruction complete after 4s[0m
+[0m[1maws_subnet.isolated[0]: Destruction complete after 4s[0m
+[0m[1maws_security_group.db: Destruction complete after 6s[0m
+[0m[1maws_vpc.main: Destroying... [id=vpc-0f032e65f2dd8e4de][0m[0m
+[0m[1maws_vpc.main: Destruction complete after 1s[0m
+[0m[1maws_budgets_budget.monthly: Destroying... [id=727965304944:woc-monthly][0m[0m
+[0m[1maws_budgets_budget.monthly: Destruction complete after 1s[0m
+[0m[1m[32m
+Destroy complete! Resources: 36 destroyed.[0m
