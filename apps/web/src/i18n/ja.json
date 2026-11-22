@@ -1,0 +1,97 @@
+{
+  "app": { "title": "倉庫オペレーションコンソール" },
+  "nav": {
+    "dashboard": "ダッシュボード",
+    "fleetMap": "フリートマップ",
+    "fleet": "フリート",
+    "orders": "注文",
+    "events": "イベント",
+    "handheld": "ハンディ",
+    "settings": "設定"
+  },
+  "conn": { "live": "ライブ", "mock": "モック", "reconnecting": "再接続中…", "connecting": "接続中…" },
+  "status": { "idle": "待機", "moving": "移動中", "picking": "ピッキング中", "charging": "充電中", "fault": "故障", "offline": "オフライン" },
+  "kind": { "amr": "AMR", "forklift": "フォークリフト" },
+  "priority": { "low": "低", "normal": "通常", "high": "高" },
+  "orderStatus": { "queued": "待機中", "in_progress": "処理中", "completed": "完了", "short": "欠品", "cancelled": "キャンセル" },
+  "severity": { "info": "情報", "warn": "警告", "error": "エラー" },
+  "task": { "pending": "保留", "active": "実行中", "done": "完了" },
+  "theme": { "dark": "ダーク", "light": "ライト", "high-contrast": "ハイコントラスト" },
+  "density": { "comfortable": "標準", "compact": "コンパクト" },
+  "common": { "reload": "再読み込み", "error": "問題が発生しました。", "all": "すべて", "close": "閉じる" },
+  "kpi": {
+    "online": "オンラインのロボット",
+    "utilization": "フリート稼働率",
+    "ordersInProgress": "処理中の注文",
+    "linesPerMin": "毎分ライン数"
+  },
+  "dashboard": { "throughput": "スループット", "statusMix": "ロボット状態", "latestEvents": "最新イベント" },
+  "map": { "camera": "カメラ", "filter": "ステータスフィルター", "top": "真上", "iso": "アイソメ", "follow": "追従" },
+  "robot": {
+    "panelTitle": "ロボット詳細",
+    "kind": "種別",
+    "status": "状態",
+    "battery": "バッテリー",
+    "speed": "速度",
+    "speedValue": "{{value}} m/s",
+    "task": "タスク",
+    "noTask": "タスクなし",
+    "lastSeen": "最終確認",
+    "pause": "一時停止",
+    "resume": "再開",
+    "recall": "充電に戻す"
+  },
+  "perf": { "fps": "FPS", "robots": "ロボット", "commits": "コミット/秒", "msgs": "WSメッセージ/秒" },
+  "fleet": {
+    "search": "IDで検索",
+    "rows": "{{count}} 台",
+    "empty": "該当するロボットがありません。",
+    "col": { "id": "ID", "kind": "種別", "status": "状態", "battery": "バッテリー", "task": "タスク", "position": "位置 (m)", "lastSeen": "最終確認" }
+  },
+  "orders": {
+    "demo": "デモ注文を作成",
+    "empty": "注文がありません。",
+    "noTasks": "タスクはまだありません。",
+    "timeline": "タスクタイムライン",
+    "showRobot": "{{robot}} をマップで表示",
+    "col": { "id": "注文", "customer": "顧客", "priority": "優先度", "progress": "進捗", "due": "納期", "status": "状態" }
+  },
+  "events": {
+    "empty": "イベントはありません。",
+    "filter": "重要度フィルター",
+    "pause": "ストリーム停止",
+    "resume": "ストリーム再開",
+    "ROBOT_FAULT": "{{robot}} が故障: {{reason}}",
+    "ROBOT_RECOVERED": "{{robot}} が復旧しました",
+    "LOW_BATTERY": "{{robot}} のバッテリー残量が低下 ({{battery}}%)",
+    "ORDER_CREATED": "注文 {{order}} を作成 ({{lines}} ライン)",
+    "ORDER_DONE": "注文 {{order}} が完了しました",
+    "PICK_ISSUE": "{{location}} でピッキング問題が報告されました",
+    "ROBOT_COMMAND": "{{robot}} へのコマンド: {{command}}",
+    "reason": { "motor": "モーター", "sensor": "センサー", "blocked": "経路遮断" }
+  },
+  "handheld": {
+    "title": "ハンディ端末",
+    "location": "棚番",
+    "sku": "SKU",
+    "qty": "数量",
+    "station": "ステーション",
+    "scanHint": "バーコードをスキャンするか、「スキャン実行」をタップしてください。",
+    "simulateScan": "スキャン実行",
+    "confirm": "ピッキング確定",
+    "issue": "問題を報告",
+    "issueSent": "問題を報告しました",
+    "noTask": "ピッキング作業はありません。",
+    "scanInput": "バーコードスキャナー入力"
+  },
+  "settings": {
+    "language": "言語",
+    "theme": "テーマ",
+    "density": "表示密度",
+    "dataSource": "データソース",
+    "injectFault": "障害注入 (デモ)",
+    "injectFaultButton": "障害を発生させる",
+    "faultInjected": "{{robot}} に障害を発生させました",
+    "version": "バージョン {{version}}"
+  }
+}

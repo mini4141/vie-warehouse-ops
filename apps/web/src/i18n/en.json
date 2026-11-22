@@ -1,0 +1,97 @@
+{
+  "app": { "title": "Warehouse Ops Console" },
+  "nav": {
+    "dashboard": "Dashboard",
+    "fleetMap": "Fleet Map",
+    "fleet": "Fleet",
+    "orders": "Orders",
+    "events": "Events",
+    "handheld": "Handheld",
+    "settings": "Settings"
+  },
+  "conn": { "live": "Live", "mock": "Mock", "reconnecting": "Reconnecting…", "connecting": "Connecting…" },
+  "status": { "idle": "Idle", "moving": "Moving", "picking": "Picking", "charging": "Charging", "fault": "Fault", "offline": "Offline" },
+  "kind": { "amr": "AMR", "forklift": "Forklift" },
+  "priority": { "low": "Low", "normal": "Normal", "high": "High" },
+  "orderStatus": { "queued": "Queued", "in_progress": "In progress", "completed": "Completed", "short": "Short", "cancelled": "Cancelled" },
+  "severity": { "info": "Info", "warn": "Warning", "error": "Error" },
+  "task": { "pending": "Pending", "active": "Active", "done": "Done" },
+  "theme": { "dark": "Dark", "light": "Light", "high-contrast": "High contrast" },
+  "density": { "comfortable": "Comfortable", "compact": "Compact" },
+  "common": { "reload": "Reload", "error": "Something went wrong.", "all": "All", "close": "Close" },
+  "kpi": {
+    "online": "Robots online",
+    "utilization": "Fleet utilization",
+    "ordersInProgress": "Orders in progress",
+    "linesPerMin": "Lines per minute"
+  },
+  "dashboard": { "throughput": "Throughput", "statusMix": "Robot status", "latestEvents": "Latest events" },
+  "map": { "camera": "Camera", "filter": "Status filter", "top": "Top", "iso": "Isometric", "follow": "Follow" },
+  "robot": {
+    "panelTitle": "Robot details",
+    "kind": "Type",
+    "status": "Status",
+    "battery": "Battery",
+    "speed": "Speed",
+    "speedValue": "{{value}} m/s",
+    "task": "Task",
+    "noTask": "No task",
+    "lastSeen": "Last seen",
+    "pause": "Pause",
+    "resume": "Resume",
+    "recall": "Recall to charger"
+  },
+  "perf": { "fps": "FPS", "robots": "Robots", "commits": "Commits/s", "msgs": "WS msg/s" },
+  "fleet": {
+    "search": "Search by ID",
+    "rows": "{{count}} robots",
+    "empty": "No robots match.",
+    "col": { "id": "ID", "kind": "Type", "status": "Status", "battery": "Battery", "task": "Task", "position": "Position (m)", "lastSeen": "Last seen" }
+  },
+  "orders": {
+    "demo": "New demo order",
+    "empty": "No orders.",
+    "noTasks": "No tasks yet.",
+    "timeline": "Task timeline",
+    "showRobot": "Show {{robot}} on map",
+    "col": { "id": "Order", "customer": "Customer", "priority": "Priority", "progress": "Progress", "due": "Due", "status": "Status" }
+  },
+  "events": {
+    "empty": "No events.",
+    "filter": "Severity filter",
+    "pause": "Pause stream",
+    "resume": "Resume stream",
+    "ROBOT_FAULT": "{{robot}} fault: {{reason}}",
+    "ROBOT_RECOVERED": "{{robot}} recovered",
+    "LOW_BATTERY": "{{robot}} low battery ({{battery}}%)",
+    "ORDER_CREATED": "Order {{order}} created ({{lines}} lines)",
+    "ORDER_DONE": "Order {{order}} completed",
+    "PICK_ISSUE": "Pick issue reported at {{location}}",
+    "ROBOT_COMMAND": "{{robot}} command: {{command}}",
+    "reason": { "motor": "motor", "sensor": "sensor", "blocked": "path blocked" }
+  },
+  "handheld": {
+    "title": "Handheld",
+    "location": "Location",
+    "sku": "SKU",
+    "qty": "Quantity",
+    "station": "Station",
+    "scanHint": "Scan the barcode, or tap Simulate scan.",
+    "simulateScan": "Simulate scan",
+    "confirm": "Confirm pick",
+    "issue": "Report issue",
+    "issueSent": "Issue reported",
+    "noTask": "No pick task available.",
+    "scanInput": "Barcode scanner input"
+  },
+  "settings": {
+    "language": "Language",
+    "theme": "Theme",
+    "density": "Density",
+    "dataSource": "Data source",
+    "injectFault": "Fault injection (demo)",
+    "injectFaultButton": "Inject fault",
+    "faultInjected": "Fault injected on {{robot}}",
+    "version": "Version {{version}}"
+  }
+}
