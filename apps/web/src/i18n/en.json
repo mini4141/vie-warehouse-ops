@@ -64,7 +64,7 @@
     "ROBOT_FAULT": "{{robot}} fault: {{reason}}",
     "ROBOT_RECOVERED": "{{robot}} recovered",
     "LOW_BATTERY": "{{robot}} low battery ({{battery}}%)",
-    "ORDER_CREATED": "Order {{order}} created ({{lines}} lines)",
+    "ORDER_CREATED": "Order {{order}} created, lines: {{lines}}",
     "ORDER_DONE": "Order {{order}} completed",
     "PICK_ISSUE": "Pick issue reported at {{location}}",
     "ROBOT_COMMAND": "{{robot}} command: {{command}}",

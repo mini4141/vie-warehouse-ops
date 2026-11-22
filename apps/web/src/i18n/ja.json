@@ -64,7 +64,7 @@
     "ROBOT_FAULT": "{{robot}} が故障: {{reason}}",
     "ROBOT_RECOVERED": "{{robot}} が復旧しました",
     "LOW_BATTERY": "{{robot}} のバッテリー残量が低下 ({{battery}}%)",
-    "ORDER_CREATED": "注文 {{order}} を作成 ({{lines}} ライン)",
+    "ORDER_CREATED": "注文 {{order}} を作成 (ライン数: {{lines}})",
     "ORDER_DONE": "注文 {{order}} が完了しました",
     "PICK_ISSUE": "{{location}} でピッキング問題が報告されました",
     "ROBOT_COMMAND": "{{robot}} へのコマンド: {{command}}",

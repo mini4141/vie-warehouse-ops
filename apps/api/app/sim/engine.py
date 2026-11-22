@@ -2,6 +2,7 @@
 
 import asyncio
 import json
+import logging
 import math
 import os
 import random
@@ -14,6 +15,7 @@ from .layout import AISLE_YS, CHARGERS, STATIONS, location_label
 from .path import route
 
 TICK = 0.2
+log = logging.getLogger("uvicorn.error")  # uvicorn configures this one, so it reaches CloudWatch
 SPEED = {"amr": 1.5, "forklift": 1.2}
 STATUS_CODE = {"idle": 0, "moving": 1, "picking": 2, "charging": 3, "fault": 4, "offline": 5}
 CUSTOMERS = [
@@ -154,6 +156,15 @@ class Engine:
         self.event_seq += 1
         ev = EventState(self.event_seq, ts or now(), severity, code, robot_id, order_id, params or {})
         self.events.append(ev)
+        if severity != "info":
+            log.warning(
+                "event severity=%s code=%s robot=%s order=%s params=%s",
+                severity,
+                code,
+                robot_id,
+                order_id,
+                params,
+            )
         if len(self.events) > EVENT_CAP:
             del self.events[0]
         for q in self.subscribers:

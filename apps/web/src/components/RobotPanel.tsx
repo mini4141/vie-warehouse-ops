@@ -81,7 +81,7 @@ function PanelBody({ id }: { id: string }) {
         <dt className="text-muted">{t('robot.lastSeen')}</dt>
         <dd>{data ? formatRelative(data.lastSeen) : '—'}</dd>
       </dl>
-      <div className="mt-4 flex gap-2">
+      <div className="mt-4 flex flex-wrap gap-2">
         <Button variant="outline" size="sm" onClick={() => mutation.mutate('pause')}>
           <Pause className="size-3" />
           {t('robot.pause')}

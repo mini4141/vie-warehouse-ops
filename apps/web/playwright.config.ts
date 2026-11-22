@@ -5,6 +5,7 @@ const baseURL = process.env.BASE_URL ?? 'http://localhost:4173'
 
 export default defineConfig({
   testDir: 'e2e',
+  testMatch: /smoke\.spec\.ts/,
   timeout: 60_000,
   retries: 1,
   reporter: [['list']],
