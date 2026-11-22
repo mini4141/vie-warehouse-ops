@@ -18,3 +18,4 @@ playwright-report
 apps/api/woc.db
 docs/_debug*
 docs/_*
+*.tsbuildinfo
