@@ -17,3 +17,4 @@ playwright-report
 .claude/
 apps/api/woc.db
 docs/_debug*
+docs/_*

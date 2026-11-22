@@ -1,98 +1,25 @@
-export type RobotKind = 'amr' | 'forklift'
-export type RobotStatus = 'idle' | 'moving' | 'picking' | 'charging' | 'fault' | 'offline'
-export type Priority = 'low' | 'normal' | 'high'
-export type OrderStatus = 'queued' | 'in_progress' | 'completed' | 'short' | 'cancelled'
-export type TaskType = 'move' | 'pick' | 'charge'
-export type TaskStatus = 'pending' | 'active' | 'done'
-export type Severity = 'info' | 'warn' | 'error'
-export type RobotCommand = 'pause' | 'resume' | 'recall'
+// Domain types come from the FastAPI OpenAPI document (`make gen-api`); do not hand-edit the shapes.
+import type { components } from './schema'
 
-export interface Point {
-  x: number
-  y: number
-}
+type S = components['schemas']
 
-export interface Robot {
-  id: string
-  kind: RobotKind
-  status: RobotStatus
-  battery: number
-  x: number
-  y: number
-  heading: number
-  speed: number
-  taskId: string | null
-  lastSeen: string
-}
+export type Point = S['Point']
+export type Robot = S['Robot']
+export type RobotDetail = S['RobotDetail']
+export type Task = S['Task']
+export type Order = S['Order']
+export type OrderDetail = S['OrderDetail']
+export type OrdersResponse = S['OrdersResponse']
+export type WocEvent = S['Event']
+export type Layout = S['Layout']
+export type KpiPoint = S['KpiPoint']
+export type DashboardSummary = S['DashboardSummary']
 
-export interface Task {
-  id: string
-  orderId: string | null
-  type: TaskType
-  status: TaskStatus
-  robotId: string | null
-  from: Point
-  to: Point
-  sku: string | null
-  qty: number | null
-  locationLabel: string | null
-  startedAt: string | null
-  finishedAt: string | null
-}
-
-export interface RobotDetail extends Robot {
-  task: Task | null
-}
-
-export interface Order {
-  id: string
-  customer: string
-  priority: Priority
-  status: OrderStatus
-  lineCount: number
-  linesDone: number
-  createdAt: string
-  dueAt: string
-}
-
-export interface OrderDetail extends Order {
-  tasks: Task[]
-}
-export interface OrdersResponse {
-  items: Order[]
-  counts: Record<OrderStatus, number>
-}
-
-export interface WocEvent {
-  id: number
-  ts: string
-  severity: Severity
-  code: string
-  robotId: string | null
-  orderId: string | null
-  params: Record<string, string | number>
-}
-
-export interface Layout {
-  width: number
-  height: number
-  racks: { x: number; y: number; w: number; d: number; h: number }[]
-  stations: { id: string; x: number; y: number; kind: 'pick' | 'pack' }[]
-  chargers: { id: string; x: number; y: number }[]
-}
-
-export interface KpiPoint {
-  ts: string
-  linesPerMin: number
-  utilization: number
-}
-
-export interface DashboardSummary {
-  online: number
-  total: number
-  utilization: number
-  ordersInProgress: number
-  linesPerMin: number
-  series: KpiPoint[]
-  byStatus: Record<RobotStatus, number>
-}
+export type RobotKind = Robot['kind']
+export type RobotStatus = Robot['status']
+export type Priority = Order['priority']
+export type OrderStatus = Order['status']
+export type TaskType = Task['type']
+export type TaskStatus = Task['status']
+export type Severity = WocEvent['severity']
+export type RobotCommand = S['CommandBody']['command']
