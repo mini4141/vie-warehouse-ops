@@ -1,0 +1,15 @@
+{
+    "name": "woc-api",
+    "status": "ACTIVE",
+    "desired": 1,
+    "running": 1,
+    "launchType": "FARGATE",
+    "taskDefinition": "arn:aws:ecs:ap-southeast-2:727965304944:task-definition/woc-api:1",
+    "deployments": [
+        {
+            "status": "PRIMARY",
+            "rollout": "COMPLETED",
+            "running": 1
+        }
+    ]
+}

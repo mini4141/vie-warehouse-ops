@@ -1,11 +1,13 @@
 resource "aws_s3_bucket" "web" {
+  count         = var.enable_cloudfront ? 1 : 0
   bucket        = "woc-web-${local.account_id}"
   force_destroy = true
   depends_on    = [aws_budgets_budget.monthly]
 }
 
 resource "aws_s3_bucket_public_access_block" "web" {
-  bucket                  = aws_s3_bucket.web.id
+  count                   = var.enable_cloudfront ? 1 : 0
+  bucket                  = aws_s3_bucket.web[0].id
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
@@ -13,6 +15,7 @@ resource "aws_s3_bucket_public_access_block" "web" {
 }
 
 resource "aws_cloudfront_origin_access_control" "web" {
+  count                             = var.enable_cloudfront ? 1 : 0
   name                              = "woc-web"
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
@@ -22,6 +25,7 @@ resource "aws_cloudfront_origin_access_control" "web" {
 # SPA routing only for the default (S3) behavior; a distribution-wide 404 -> index.html rule would
 # also rewrite API errors, so this viewer-request function rewrites extension-less paths instead.
 resource "aws_cloudfront_function" "spa" {
+  count   = var.enable_cloudfront ? 1 : 0
   name    = "woc-spa-rewrite"
   runtime = "cloudfront-js-2.0"
   publish = true
@@ -44,6 +48,7 @@ locals {
 }
 
 resource "aws_cloudfront_distribution" "main" {
+  count               = var.enable_cloudfront ? 1 : 0
   enabled             = true
   default_root_object = "index.html"
   price_class         = "PriceClass_200"
@@ -51,8 +56,8 @@ resource "aws_cloudfront_distribution" "main" {
 
   origin {
     origin_id                = "s3"
-    domain_name              = aws_s3_bucket.web.bucket_regional_domain_name
-    origin_access_control_id = aws_cloudfront_origin_access_control.web.id
+    domain_name              = aws_s3_bucket.web[0].bucket_regional_domain_name
+    origin_access_control_id = aws_cloudfront_origin_access_control.web[0].id
   }
 
   # HTTP between CloudFront and the ALB is acceptable for a short demo; the ALB SG only admits CloudFront.
@@ -78,7 +83,7 @@ resource "aws_cloudfront_distribution" "main" {
     compress               = true
     function_association {
       event_type   = "viewer-request"
-      function_arn = aws_cloudfront_function.spa.arn
+      function_arn = aws_cloudfront_function.spa[0].arn
     }
   }
 
@@ -105,9 +110,10 @@ resource "aws_cloudfront_distribution" "main" {
 }
 
 data "aws_iam_policy_document" "web_bucket" {
+  count = var.enable_cloudfront ? 1 : 0
   statement {
     actions   = ["s3:GetObject"]
-    resources = ["${aws_s3_bucket.web.arn}/*"]
+    resources = ["${aws_s3_bucket.web[0].arn}/*"]
     principals {
       type        = "Service"
       identifiers = ["cloudfront.amazonaws.com"]
@@ -115,12 +121,13 @@ data "aws_iam_policy_document" "web_bucket" {
     condition {
       test     = "StringEquals"
       variable = "AWS:SourceArn"
-      values   = [aws_cloudfront_distribution.main.arn]
+      values   = [aws_cloudfront_distribution.main[0].arn]
     }
   }
 }
 
 resource "aws_s3_bucket_policy" "web" {
-  bucket = aws_s3_bucket.web.id
-  policy = data.aws_iam_policy_document.web_bucket.json
+  count  = var.enable_cloudfront ? 1 : 0
+  bucket = aws_s3_bucket.web[0].id
+  policy = data.aws_iam_policy_document.web_bucket[0].json
 }

@@ -18,16 +18,17 @@ if [ "${1:-}" = "image" ]; then
   exit 0
 fi
 
-BUCKET="$(tf_out web_bucket)"
-DIST="$(tf_out cloudfront_distribution_id)"
-URL="$(tf_out cloudfront_url)"
+URL="$(tf_out app_url)"
 CLUSTER="$(tf_out ecs_cluster)"
 SERVICE="$(tf_out ecs_service)"
 
+# ALB-only deployment (CloudFront needs an AWS-verified account): the API image also serves the SPA build.
 VITE_DATA_SOURCE=live VITE_APP_VERSION="$VERSION" pnpm --dir "$ROOT/apps/web" build
+rm -rf "$ROOT/apps/api/static" && cp -r "$ROOT/apps/web/dist" "$ROOT/apps/api/static"
 push_image
-aws s3 sync "$ROOT/apps/web/dist" "s3://$BUCKET" --delete
-aws cloudfront create-invalidation --distribution-id "$DIST" --paths "/*" >/dev/null
+if [ -n "$(tf_out cloudfront_distribution_id)" ]; then
+  aws cloudfront create-invalidation --distribution-id "$(tf_out cloudfront_distribution_id)" --paths "/*" >/dev/null
+fi
 aws ecs update-service --cluster "$CLUSTER" --service "$SERVICE" --force-new-deployment >/dev/null
 aws ecs wait services-stable --cluster "$CLUSTER" --services "$SERVICE"
 

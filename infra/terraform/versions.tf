@@ -25,6 +25,12 @@ variable "image_tag" {
   default = "latest"
 }
 
+variable "enable_cloudfront" {
+  type        = bool
+  default     = false
+  description = "CloudFront needs an AWS-verified account; when false the ALB serves SPA + API directly."
+}
+
 variable "alert_email" {
   type        = string
   default     = ""

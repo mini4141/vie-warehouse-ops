@@ -1,0 +1,32 @@
+{
+  "app_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "http://woc-alb-768083828.ap-southeast-2.elb.amazonaws.com"
+  },
+  "cloudfront_distribution_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": ""
+  },
+  "ecr_repo_url": {
+    "sensitive": false,
+    "type": "string",
+    "value": "727965304944.dkr.ecr.ap-southeast-2.amazonaws.com/woc-api"
+  },
+  "ecs_cluster": {
+    "sensitive": false,
+    "type": "string",
+    "value": "woc"
+  },
+  "ecs_service": {
+    "sensitive": false,
+    "type": "string",
+    "value": "woc-api"
+  },
+  "rds_endpoint": {
+    "sensitive": false,
+    "type": "string",
+    "value": "woc-db.cxsmemyuuo2b.ap-southeast-2.rds.amazonaws.com"
+  }
+}

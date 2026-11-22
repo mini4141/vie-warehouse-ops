@@ -1,1 +1,1 @@
-FPS 60 · Robots 200 · Commits/s 1 · WS msg/s 6
+FPS 60 · Robots 200 · Commits/s 0 · WS msg/s 10

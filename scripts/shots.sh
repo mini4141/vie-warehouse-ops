@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 if [ -z "${BASE_URL:-}" ]; then
   export AWS_PROFILE=warehouse AWS_PAGER=""
-  BASE_URL="$(cd "$ROOT/infra/terraform" && terraform output -raw cloudfront_url)"
+  BASE_URL="$(cd "$ROOT/infra/terraform" && terraform output -raw app_url)"
 fi
 export BASE_URL
 pnpm --dir "$ROOT/apps/web" exec playwright test -c playwright.shots.config.ts

@@ -2,9 +2,12 @@ import asyncio
 import logging
 import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from app import persistence
 from app.db import init_db
@@ -62,3 +65,16 @@ app.include_router(ws.router)
 @app.get("/healthz", include_in_schema=False)
 async def healthz():
     return {"ok": True}
+
+
+# ALB-only deployment: the API image also carries the SPA build (see DECISIONS.md).
+STATIC = Path(__file__).resolve().parent.parent / "static"
+if (STATIC / "index.html").is_file():
+    app.mount("/assets", StaticFiles(directory=STATIC / "assets"), name="assets")
+
+    @app.get("/{path:path}", include_in_schema=False)
+    async def spa(path: str):
+        target = (STATIC / path).resolve()
+        if path and target.is_file() and target.is_relative_to(STATIC):
+            return FileResponse(target)
+        return FileResponse(STATIC / "index.html")

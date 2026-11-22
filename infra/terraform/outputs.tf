@@ -1,9 +1,9 @@
-output "cloudfront_url" {
-  value = "https://${aws_cloudfront_distribution.main.domain_name}"
+output "app_url" {
+  value = var.enable_cloudfront ? "https://${aws_cloudfront_distribution.main[0].domain_name}" : "http://${aws_lb.main.dns_name}"
 }
 
 output "cloudfront_distribution_id" {
-  value = aws_cloudfront_distribution.main.id
+  value = var.enable_cloudfront ? aws_cloudfront_distribution.main[0].id : ""
 }
 
 output "ecr_repo_url" {
@@ -12,10 +12,6 @@ output "ecr_repo_url" {
 
 output "rds_endpoint" {
   value = aws_db_instance.main.address
-}
-
-output "web_bucket" {
-  value = aws_s3_bucket.web.bucket
 }
 
 output "ecs_cluster" {

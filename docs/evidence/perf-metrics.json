@@ -1,7 +1,7 @@
 {
   "windowSeconds": 10,
-  "mainThreadTaskSeconds": 0.953,
-  "scriptSeconds": 0.618,
+  "mainThreadTaskSeconds": 0.951,
+  "scriptSeconds": 0.61,
   "mainThreadBusyPercent": 9.5,
-  "hud": "FPS 60 · Robots 200 · Commits/s 2 · WS msg/s 5"
+  "hud": "FPS 60 · Robots 200 · Commits/s 0 · WS msg/s 5"
 }

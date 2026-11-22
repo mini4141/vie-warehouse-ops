@@ -1,0 +1,12 @@
+{
+    "id": "woc-db",
+    "status": "available",
+    "class": "db.t4g.micro",
+    "engine": "postgres",
+    "version": "16.13",
+    "storageGb": 20,
+    "storageType": "gp3",
+    "multiAz": false,
+    "publiclyAccessible": false,
+    "endpointHost": "woc-db.cxsmemyuuo2b.ap-southeast-2.rds.amazonaws.com"
+}
